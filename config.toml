@@ -1,0 +1,4 @@
+baseURL = "https://nextcloud.com/"
+languageCode = "en-us"
+title = "Nextcloud"
+theme = "nextcloud"
