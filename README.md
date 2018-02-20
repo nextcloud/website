@@ -1,5 +1,9 @@
 # Nextcloud website
 
+## Requirement
+
+Install [Hugo](https://gohugo.io). For details see their [install guidelines](https://gohugo.io/getting-started/installing/).
+
 ## Development
 
 ```
