@@ -23,7 +23,7 @@
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     {{ end }}
 
-    <link href='{{ "css/main.css" | absURL }}' rel='stylesheet' type="text/css" />
+    <link href='css/{{ index .Site.Data.css.hash "main.css"}}' rel='stylesheet' type="text/css" />
     {{ block "favicon" . }}
       {{ partial "site-favicon.html" . }}
     {{ end }}

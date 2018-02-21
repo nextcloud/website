@@ -1,0 +1,27 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "## Requirement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextcloud/website.git"
+  },
+  "keywords": [],
+  "author": "Paulo Moura itsme@paulomoura.design",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nextcloud/website/issues"
+  },
+  "homepage": "https://github.com/nextcloud/website#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-hash": "^4.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}

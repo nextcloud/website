@@ -1,0 +1,14 @@
+/* 
+This file follow the 7-1 pattern. 
+You can read more about this https://sass-guidelin.es/#architecture 
+*/
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+
+@import 'base/reset';
+@import 'base/base';
+@import 'base/colors';
+@import 'base/typography';
+
+// @import 'vendors/bootstrap';
