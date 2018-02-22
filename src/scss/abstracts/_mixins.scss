@@ -3,12 +3,12 @@ Breakpoints mixin
 */
 @mixin breakpoint($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 600px) { @content };
+        @media (max-width: 37.5rem) { @content }; //600px
     }
-    @if $breakpoint == tab-port {
+    @if $breakpoint == tablet-portrait {
         @media (max-width: 900px) { @content };
     }
-    @if $breakpoint == tab-land {
+    @if $breakpoint == tablet-landscape {
         @media (max-width: 1200px) { @content };
     }
     @if $breakpoint == big-desk {

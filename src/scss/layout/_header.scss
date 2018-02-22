@@ -15,7 +15,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 114rem;
+        max-width: 120rem;
+        padding: 0 3rem;
         height: 10rem;
         margin: 0 auto;
     }
@@ -32,11 +33,18 @@
             width: 14rem;
             display: inline-block;
             transform: scale(0.5, 0.5);
+            margin-left: -3.5rem; // This will adjust the padding
         }
     }
 
     &__dropdown {
+        position: relative;
         padding: 0 1.5rem;
+        display: inline-block;
+
+        @include breakpoint(tablet-portrait) {
+            display: none;
+        }
         
         &:first-child {
             padding-left: 0; 
@@ -45,15 +53,42 @@
         &:last-child {
             padding-right: 0; 
         }
+
+        &__links {
+            position: absolute;
+            display: none;
+
+            &--visible {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
 
     &__link {
         text-decoration: none;
         padding: 0 1.5rem;
         color: white;
+
+        @include breakpoint(tablet-portrait) {
+            display: none;
+        }
         
         &:last-child {
             padding-right: 0;
+        }
+    }
+
+    &__hamburguer {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+        display: none;
+
+        @include breakpoint(tablet-portrait) {
+            display: block;
         }
     }
 }

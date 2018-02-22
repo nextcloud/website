@@ -1,8 +1,12 @@
-let gulp = require("gulp");
-let sass = require("gulp-sass");
-let autoprefixer = require("gulp-autoprefixer");
-let hash = require("gulp-hash");
-let del = require("del");
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const autoprefixer = require("gulp-autoprefixer");
+const hash = require("gulp-hash");
+const del = require("del");
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const sourcemaps = require('gulp-sourcemaps');
 
 // Compile SCSS files to CSS
 gulp.task("scss", function () {
@@ -40,15 +44,37 @@ gulp.task("images", function () {
         .pipe(gulp.dest("data/images"))
 })
 
-// Hash javascript
-gulp.task("js", function () {
-    del(["static/js/**/*"])
-    gulp.src("src/js/**/*")
-        .pipe(hash())
-        .pipe(gulp.dest("static/js"))
-        .pipe(hash.manifest("hash.json"))
-        .pipe(gulp.dest("data/js"))
-})
+// // Hash javascript
+// gulp.task("js", () => {
+//     del(["static/js/**/*"])
+//     gulp.src("src/js/**/*")
+//         .pipe(hash())
+//         .pipe(gulp.dest("static/js"))
+//         .pipe(hash.manifest("hash.json"))
+//         .pipe(gulp.dest("data/js"))
+// })
+
+gulp.task('js', () => {
+	return browserify({
+		entries: ['src/js/main.js'],
+		debug: true,
+		compress: {
+			sequences: true,
+			dead_code: true,
+			booleans: true
+		}
+	})
+    .transform(babelify.configure({
+	presets : ['es2015']
+    }))
+    .bundle()
+    .pipe(source('main.js'))
+    .pipe(hash())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('static/js'))
+    .pipe(hash.manifest("hash.json"))
+    .pipe(gulp.dest("data/js"))
+});
 
 // Watch asset folder for changes
 gulp.task("watch", ["scss", "images", "js"], function () {
