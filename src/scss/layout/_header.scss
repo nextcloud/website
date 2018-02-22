@@ -1,0 +1,60 @@
+.header {
+    position: relative;
+    width: 100%;
+
+    &--blue {
+        background-color: color('primary', 'primary');
+        color: white;
+    }
+    
+    &--transparent {
+        position: absolute;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 114rem;
+        height: 10rem;
+        margin: 0 auto;
+    }
+
+    &__section {
+        display: inline-block;
+        font-size: 1.6rem;
+
+        &--logo {
+            background: url(../images/logo_white_sprite.png) 0 0 no-repeat;
+            // background-position-x: 0px;
+            background-position-x: -4620px;
+            height: 10rem;
+            width: 14rem;
+            display: inline-block;
+            transform: scale(0.5, 0.5);
+        }
+    }
+
+    &__dropdown {
+        padding: 0 1.5rem;
+        
+        &:first-child {
+            padding-left: 0; 
+        }
+
+        &:last-child {
+            padding-right: 0; 
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        padding: 0 1.5rem;
+        color: white;
+        
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+

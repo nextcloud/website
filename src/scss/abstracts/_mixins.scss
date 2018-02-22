@@ -1,0 +1,17 @@
+/* 
+Breakpoints mixin
+*/
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 600px) { @content };
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 900px) { @content };
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 1200px) { @content };
+    }
+    @if $breakpoint == big-desk {
+        @media (min-width: 1800px) { @content };
+    }
+}

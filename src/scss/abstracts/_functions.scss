@@ -1,0 +1,21 @@
+
+// Create a color palete
+$primary-color-key: 'primary' !default;
+
+@function color($name: 'primary', $variant: $primary-color-key) {
+  $color: null;
+  // Get the color spectrum
+  $color-spectrum: map-get($palette, $name);
+  // Get the color variant
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+
+    @if not($color) {
+      @warn "Color `#{$variant}` does not exist in spectrum `#{$name}`";
+    }
+  } @else {
+    @warn "Spectrum `#{$name}` does not exist";
+  }
+
+  @return $color;
+}

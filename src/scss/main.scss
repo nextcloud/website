@@ -5,10 +5,16 @@ You can read more about this https://sass-guidelin.es/#architecture
 
 @import 'abstracts/variables';
 @import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+@import 'vendors/normalize';
 
 @import 'base/reset';
 @import 'base/base';
 @import 'base/colors';
 @import 'base/typography';
 
+@import 'layout/header';
+
 // @import 'vendors/bootstrap';
+
