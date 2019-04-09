@@ -34,7 +34,8 @@
 	<link rel="shortcut icon" href="/static-assets/img/common/favicon.png">
 	<link rel="apple-touch-icon-precomposed" href="/static-assets/img/common/favicon.png">
 
-	<link rel="stylesheet" type="text/css" href="/static-assets/css/0871c.css" media="all">
+	{{ $style := resources.Get "css/0871c.css" | minify | fingerprint }}
+	<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" media="all">
 
 	<link rel="dns-prefetch" href="//s.w.org">
 
@@ -46,7 +47,7 @@
 	<link rel="https://api.w.org/" href="https://nextcloud.com/wp-json/">
 	<link rel="alternate" type="application/json+oembed" href="https://nextcloud.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnextcloud.com%2Fchangelog%2F">
 	<link rel="alternate" type="text/xml+oembed" href="https://nextcloud.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnextcloud.com%2Fchangelog%2F&amp;format=xml">
-		<link rel="canonical" href="https://nextcloud.com/changelog/">
+	<link rel="canonical" href="https://nextcloud.com/changelog/">
 	<link rel="icon" href="/static-assets/img/logo/rounded-150.png" sizes="32x32">
 	<link rel="icon" href="/static-assets/img/logo/rounded-300.png" sizes="192x192">
 	<link rel="apple-touch-icon-precomposed" href="/static-assets/img/logo/rounded-300.png">
