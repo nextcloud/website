@@ -35,5 +35,5 @@
 	z-index: 5;
 	top: 100%;
 	opacity: 0;
-	transition: transform 200ms, opacity 100ms, height 100ms, width 100ms;
+	transition-duration: 300ms;
 }
